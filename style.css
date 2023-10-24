@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+:root {
+  /* Colors */
+  --background-color: ;
+  --seat-color: #444451;
+  --selected-color: #f6eb6f;
+  --reserved-color: red;
+  --text-color: #c07474;
+  --info-background: rgba(0, 0, 0, 0.2);
+  /* box shadow */
+  --box-shadow: 0px 0px 2.4rem 0.3rem rgba(179, 118, 89, 1);
+  /* Transition */
+  --transition: all 0.3s ease;
+}
+
+body {
+  background-color: #8bc6ec;
+  background-image: linear-gradient(
+    135deg,
+    #8bc6ec 0%,
+    #9599e2 33%,
+    #310606 66%,
+    #a8a59b 100%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.seatRow {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.screen {
+  width: 100%;
+  height: 12rem;
+  margin: 3rem 0;
+  box-shadow: var(--box-shadow);
+}
+.screen img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.4rem;
+}
+.seat {
+  color: var(--seat-color);
+  margin: 0.8rem;
+  font-size: 2.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.seat.reserved {
+  color: var(--reserved-color);
+}
+.seat.selected {
+  color: var(--selected-color);
+  background-color: transparent;
+}
+
+.seat:not(.reserved):hover {
+  transform: scale(1.2);
+}
+
+.movie-list {
+  margin: 1.2rem 0;
+}
+.movie-list select {
+  display: flex;
+  font-style: italic;
+  font-weight: bold;
+  border-radius: 20rem;
+  color: rgb(17, 15, 22);
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+
+  justify-content: center;
+  text-align: center;
+}
+.movie-list select:hover {
+    transform: scale(1.2);
+    transition: var(--transition);
+    cursor: pointer
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  margin: 1.7rem 0;
+  background-color: var(--info-background);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.3rem;
+}
+.info li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info li span {
+  color: var(--text-color);
+  font-weight: bold;
+}
+.infoText {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  display: none;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.infoText span {
+  color: var(--selected-color);
+}
+
+.open{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
